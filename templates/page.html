@@ -11,7 +11,7 @@
         <li class="mx-4">{{ macros::clock(duration=page.reading_time) }}</li>
         {{ macros::tag_items(tags=page.taxonomies.tags, class="mx-4") }}
     </ul>
-    <article class="prose lg:prose-lg">
+    <article class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl">
         <blockquote>{{ page.description }}</blockquote>
         {{ page.content | safe }}
     </article>
