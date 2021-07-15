@@ -1,0 +1,16 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "NODE_ENV=production tailwindcss --minify -o static/index.css",
+    "format": "prettier --write package.json tailwind.config.js"
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "^0.4.1",
+    "tailwindcss": "^2.2.4"
+  },
+  "devDependencies": {
+    "prettier": "^2.3.2"
+  }
+}

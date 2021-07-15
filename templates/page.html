@@ -1,0 +1,19 @@
+{% import "macros.html" as macros %}
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }}{% endblock title %}
+
+{% block content %}
+<div class="flex flex-col items-center">
+    <h1 class="text-6xl font-bold">{{ page.title }}</h1>
+    <ul class="flex mt-4 mb-12">
+        <li class="mx-4">{{ macros::calendar(date=page.date) }}</li>
+        <li class="mx-4">{{ macros::clock(duration=page.reading_time) }}</li>
+        {{ macros::tag_items(tags=page.taxonomies.tags, class="mx-4") }}
+    </ul>
+    <article class="prose lg:prose-lg">
+        <blockquote>{{ page.description }}</blockquote>
+        {{ page.content | safe }}
+    </article>
+</div>
+{% endblock content %}

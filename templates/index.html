@@ -1,0 +1,24 @@
+{% import "macros.html" as macros %}
+{% extends "base.html" %}
+
+{% block title %}home{% endblock title %}
+
+{% block content %}
+<p class="w-full text-center my-8">A collection of thoughts and ideas I figure are worth spending time writing up.</p>
+<hr class="w-1/2 mx-auto my-8 border-gray-700"/>
+<ul class="flex flex-col justify-center items-center text-lg">
+    {% set things = get_section(path="thing/_index.md") %}
+    {% for page in things.pages %}
+    <li><a href="{{ page.permalink }}">
+        <div class="max-w-lg bg-gray-800 flex flex-col shadow-2xl">
+            <h2 class="m-4 mb-2 font-bold text-gray-100">{{ page.title }}</h2>
+            <p class="mx-4 mb-4">{{ page.description }}</p>
+            <div class="flex bg-[#2B3544] text-gray-300 p-2 text-sm justify-around">
+                {{ macros::calendar(date=page.date) }}
+                {{ macros::clock(duration=page.reading_time) }}
+            </div>
+        </div>
+    </a></li>
+    {% endfor %}
+</ul>
+{% endblock content %}

@@ -1,0 +1,17 @@
+# The URL the site will be built for
+base_url = "https://blog.chip.sh"
+
+title = "blog"
+description = "blog things"
+default_language = "en"
+compile_sass = false
+build_search_index = false
+minify_html = true
+
+[markdown]
+highlight_code = true
+
+[extra]
+taxonomies = [
+    { name = "tags" },
+]
