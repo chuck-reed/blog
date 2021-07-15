@@ -1,6 +1,6 @@
 module.exports = {
   mode: "jit",
-  purge: ["templates/**/*.html", "tailwind.css"],
+  purge: ["templates/**/*.html"],
   theme: {
     extend: {
       typography: (theme) => ({

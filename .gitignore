@@ -1,3 +1,4 @@
 node_modules/
 target/
 public/
+static/index.css
