@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "NODE_ENV=production tailwindcss --minify -o static/index.css",
+    "prepare": "NODE_ENV=production tailwindcss --minify -o static/index.css",
     "format": "prettier --write package.json tailwind.config.js"
   },
   "dependencies": {
