@@ -9,17 +9,17 @@
     {% endblock head %}
 </head>
 <body class="bg-gray-900 text-gray-200 text-xl">
-<div class="flex flex-col min-h-screen lg:container mx-auto px-4">
-    <header class="m-4">
-        <nav>
+<div class="flex flex-col min-h-screen">
+    <header class="px-4 py-2 mb-4 border-b border-gray-600">
+        <nav class="container mx-auto">
             <ul>
                 <li>
-                    <a class="text-4xl text-gray-100 no-underline font-semibold" href="/">blog things</a>
+                    <a class="text-4xl  text-gray-300 no-underline font-semibold" href="/">blog things</a>
                 </li>
             </ul>
         </nav>
     </header>
-    <main class="flex-grow">{% block content %}{% endblock content %}</main>
+    <main class="container flex-grow mx-auto px-4">{% block content %}{% endblock content %}</main>
     <footer class="flex flex-col w-full text-center mt-16 mb-4 text-sm">
         <span>all source code snippets are <a
                 class="text-green-300 hover:text-green-500 visited:text-green-400"
