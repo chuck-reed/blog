@@ -9,15 +9,16 @@
 
 {% block content %}
 <div class="flex flex-col items-center">
-    <h1 class="text-6xl font-bold text-center text-gray-100">{{ page.title }}</h1>
+    <h1 class="text-5xl lg:text-6xl font-bold text-center text-gray-100">{{ page.title }}</h1>
     <ul class="flex flex-col sm:flex-row mt-4 mb-12">
         <li class="mx-4">{{ macros::calendar(date=page.date) }}</li>
         <li class="mx-4">{{ macros::clock(duration=page.reading_time) }}</li>
         {{ macros::tag_items(tags=page.taxonomies.tags, class="mx-4") }}
     </ul>
-    <article class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl">
+    <figure class="prose lg:prose-lg">
         <blockquote>{{ page.description }}</blockquote>
-        {{ page.content | safe }}
-    </article>
+    </figure>
+    {{ macros::table_of_contents(toc=page.toc) }}
+    <article class="prose max-w-full md:max-w-prose md:prose-lg">{{ page.content | safe }}</article>
 </div>
 {% endblock content %}

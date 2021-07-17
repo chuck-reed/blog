@@ -6,10 +6,11 @@ description = "blog things"
 default_language = "en"
 compile_sass = false
 build_search_index = false
-minify_html = true
+minify_html = false
 
 [markdown]
 highlight_code = true
+highlight_theme = "ayu-dark"
 
 [extra]
 taxonomies = [

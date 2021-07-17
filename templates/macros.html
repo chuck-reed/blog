@@ -32,3 +32,32 @@
 </li>
 {% endfor %}
 {% endmacro tag_items %}
+
+{% macro table_of_contents(toc) %}
+<div class="2xl:fixed 2xl:top-1/3 2xl:w-full pointer-events-none">
+    <div class="2xl:w-[1550px] 2xl:flex 2xl:justify-end 2xl:mx-auto">
+        <div class="text-gray-50 text-base my-8 2xl:w-[350px] pointer-events-auto">
+            <h2 class="2xl:p-4 font-semibold">Table of Contents</h2>
+            <ul class="2xl:p-4 2xl:border-l 2xl:border-gray-400">
+                {% for header in toc %}
+                    {{ self::table_of_contents_item(item=header) }}
+                {% endfor %}
+            </ul>
+            <hr class="my-4 2xl:hidden" />
+        </div>
+    </div>
+</div>
+{% endmacro tag_items %}
+
+{% macro table_of_contents_item(item) %}
+<li>
+    <a href="{{item.permalink | safe}}">{{ item.title }}</a>
+    {% if item.children %}
+    <ul class="ml-5 mb-1">
+        {% for child in item.children %}
+          {{ self::table_of_contents_item(item=child) }}
+        {% endfor %}
+    </ul>
+    {% endif %}
+</li>
+{% endmacro table_of_content_child %}
